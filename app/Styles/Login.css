@@ -1,0 +1,108 @@
+.all{
+    justify-content: center;
+}
+.Login{
+
+    width: 545px;
+    height: 550px;
+    left: 447px;
+    top: 198px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #2A687B;
+    border: 5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+.textLogin{
+    /*position: absolute;
+    width: 234px;
+    height: 114px;
+    left: 603px;
+    top: 51px; */
+    text-align: center;
+
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 92px;
+    line-height: 114px;
+
+    color: #000000;
+}
+.buttonRegistrarse{
+    position: absolute;
+    width: 19%;
+    height: 46px;
+    /* left: 1110px; */
+    right: 8%;
+    top: 50px;
+    font-family: Revalia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 26px;
+    /* identical to box height */
+
+    color: #FFFFFF;
+
+    background: #072868;
+}
+.labelUser{
+    position: absolute;
+    width: 419px;
+    height: 84px;
+    left: 510px;
+    top: 332px;
+    margin-left: 5%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 25px;
+    /* identical to box height */
+
+    color: #000000;
+}
+#button{
+    width: 272px;
+    height: 46px;
+    left: 584px;
+    top: 709px;
+
+    margin-top: 132px;
+    margin-left: 129px;
+    margin-right: 137px;
+
+    font-family: Revalia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 26px;
+    /* identical to box height */
+
+    color: #FFFFFF;
+
+    background: #000000;
+}
+.groupUser{
+    width: 419px;
+    height: 84px;
+    left: 510px;
+    top: 332px;
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.groupPassword{
+    width: 419px;
+    height: 85px;
+    left: 510px;
+    top: 492px;
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+}
+

@@ -1,0 +1,23 @@
+.card{
+    width: 25rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    background-color: #081d62;
+    border-radius: 8%;
+    text-align-last: center;
+    color: #96e7ea;
+    transition: 0.5s;
+}
+.card:hover{
+    background-color: black;
+    color: #FFFFFF;
+}
+img{
+    margin-left: 35%;
+    margin-right: 35%;
+    width: 31%;
+}
+.boxlarge{
+    background-color: bisque;
+}

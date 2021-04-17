@@ -1,0 +1,11 @@
+h1{
+    font-size: 90px;
+    text-align: center;
+}
+.imagenLogo{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+}
