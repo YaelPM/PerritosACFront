@@ -41,7 +41,7 @@ class Nav extends React.Component{
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a className="dropdown-item" href="/productAdministration">Productos</a></li>
-                            <li><a className="dropdown-item" href="/register">Users</a></li>
+                            <li><a className="dropdown-item" href="/register">Usuarioss</a></li>
                         </ul>
                     </li>
                     <li className="nav-item">

@@ -106,15 +106,38 @@ class productAdministration extends Component{
     render() {
         if (this.token){
             return(
-                <div className={"cont"}>
+                <div className={"conten"}>
                     <Link to={"/home"}>
                         <img src="app/assets/images/flechaAtras.png" className={"flecha1"} alt=""/>
                     </Link>
                     <div className={"admn"}>
                         <div className={"list"}>
-                            <For each="x" index="indx" of={this.state.productos}>
-                                <h6 key={indx}>Id: {x.idProducto} Nombre:{x.nombre} IdCategoria: {x.idCategoria}</h6>
-                            </For>
+                            <div className="container border border-3 border-dark rounded-3">
+                                    <div className="row border-bottom border-1 border-success">
+                                        <div className="col border border-success">
+                                            ID:
+                                        </div>
+                                        <div className="col border border-success">
+                                            Nombre:
+                                        </div>
+                                        <div className="col border border-success">
+                                            ID Categoria:
+                                        </div>
+                                    </div>
+                                    <For each="x" index="idx" of={this.state.productos}>
+                                        <div className="row border-bottom border-1 border-success">
+                                            <div className="col-4 border border-success">
+                                                {x.idProducto}
+                                            </div>
+                                            <div className="col border border-success">
+                                                {x.nombre}
+                                            </div>
+                                            <div className="col border border-success">
+                                                {x.idCategoria}
+                                            </div>
+                                        </div>
+                                    </For>
+                                </div>
                         </div>
 
                         <div className={"adds"}>
