@@ -123,10 +123,13 @@ class productAdministration extends Component{
                                         <div className="col border border-success">
                                             ID Categoria:
                                         </div>
+                                        <div className="col border border-success">
+                                            Acciones:
+                                        </div>
                                     </div>
                                     <For each="x" index="idx" of={this.state.productos}>
-                                        <div className="row border-bottom border-1 border-success">
-                                            <div className="col-4 border border-success">
+                                        <div key={idx} className="row border-bottom border-1 border-success">
+                                            <div className="col border border-success">
                                                 {x.idProducto}
                                             </div>
                                             <div className="col border border-success">
@@ -135,9 +138,34 @@ class productAdministration extends Component{
                                             <div className="col border border-success">
                                                 {x.idCategoria}
                                             </div>
+                                            <div className="col border border-success">
+                                                <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modal1">Actualizar</button>
+                                                <button type="button" className="btn btn-danger">Eliminar</button>
+                                            </div>
                                         </div>
                                     </For>
                                 </div>
+                        </div>
+
+                        <div className="modal" tabIndex="-1" id={"Modal1"}>
+                            <div className="modal-dialog">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title">Modal title</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        <p>Modal body text goes here.</p>
+                                    </div>
+                                    <div className="modal-footer">
+                                        <button type="button" className="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close
+                                        </button>
+                                        <button type="button" className="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div className={"adds"}>
@@ -210,7 +238,7 @@ class productAdministration extends Component{
                                        id="reload"
                                        onClick={this.add.bind(this)}
                                        defaultValue={"Registrar"}
-                                       className={"btn"}
+                                       className={"boton1"}
                                 />
                             </div>
                         </div>
@@ -231,7 +259,7 @@ class productAdministration extends Component{
                                        id="reload"
                                        onClick={this.delete1.bind(this)}
                                        defaultValue={"Delete"}
-                                       className={"btn"}
+                                       className={"boton1"}
                                 />
                             </div>
                         </div>
