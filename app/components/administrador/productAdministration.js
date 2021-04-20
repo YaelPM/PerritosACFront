@@ -20,21 +20,20 @@ class productAdministration extends Component{
             idUpdate:"",
             categorias:[],
             productos:[],
-            token:false
+            token:false,
+            updateID:"",
+            updateName:""
         }
         this.categorias=[]
         this.productos=[]
         this.token= false
 
+
         APIInvoker.invokeGET('/users/verifyToken',data => {
             if(data.status){
                 this.token= true
-                console.log(data)
-            }else {
-                console.log(data)
             }
         })
-
         APIInvoker.invokeGET('/categories/getCategories',data => {
             console.log("entro1")
             this.setState({
@@ -42,7 +41,14 @@ class productAdministration extends Component{
             })
         }, error => {
         })
-        console.log(this.categorias)
+        APIInvoker.invokeGET('/products/getProducts',data => {
+            this.setState({
+                productos : data.datos
+            })
+        }, error => {
+        })
+    }
+    updateList(){
         APIInvoker.invokeGET('/products/getProducts',data => {
             this.setState({
                 productos : data.datos
@@ -78,7 +84,7 @@ class productAdministration extends Component{
     }
     update(e){
         let product = {
-            idProducto: this.state.idUpdate,
+            idProducto: this.state.updateID,
             idCategoria: this.state.idCategoria,
             nombre: this.state.nombre,
             precio: this.state.precio,
@@ -91,6 +97,7 @@ class productAdministration extends Component{
         }, error => {
             alert(JSON.stringify(error))
         })
+        this.updateList()
 
         e.preventDefault();
     }
@@ -114,32 +121,32 @@ class productAdministration extends Component{
                         <div className={"list"}>
                             <div className="container border border-3 border-dark rounded-3">
                                     <div className="row border-bottom border-1 border-success">
-                                        <div className="col border border-success">
+                                        <div className="col border border-dark">
                                             ID:
                                         </div>
-                                        <div className="col border border-success">
+                                        <div className="col border border-dark">
                                             Nombre:
                                         </div>
-                                        <div className="col border border-success">
+                                        <div className="col border border-dark">
                                             ID Categoria:
                                         </div>
-                                        <div className="col border border-success">
+                                        <div className="col border border-dark">
                                             Acciones:
                                         </div>
                                     </div>
                                     <For each="x" index="idx" of={this.state.productos}>
-                                        <div key={idx} className="row border-bottom border-1 border-success">
-                                            <div className="col border border-success">
+                                        <div key={idx} className="row border-bottom border-1 border-dark">
+                                            <div className="col border border-dark">
                                                 {x.idProducto}
                                             </div>
-                                            <div className="col border border-success">
+                                            <div className="col border border-dark">
                                                 {x.nombre}
                                             </div>
-                                            <div className="col border border-success">
+                                            <div className="col border border-dark">
                                                 {x.idCategoria}
                                             </div>
-                                            <div className="col border border-success">
-                                                <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modal1">Actualizar</button>
+                                            <div className="col border border-dark">
+                                                <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modal1" onClick={()=>{this.setState({updateID: x.idProducto, updateName: x.nombre})}}>Actualizar</button><br/>
                                                 <button type="button" className="btn btn-danger">Eliminar</button>
                                             </div>
                                         </div>
@@ -151,18 +158,84 @@ class productAdministration extends Component{
                             <div className="modal-dialog">
                                 <div className="modal-content">
                                     <div className="modal-header">
-                                        <h5 className="modal-title">Modal title</h5>
-                                        <button type="button" className="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
+                                        <h5 className="modal-title">Actualizar {this.state.updateName}</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                        </button>
                                     </div>
                                     <div className="modal-body">
-                                        <p>Modal body text goes here.</p>
+                                        <div>
+                                            <label htmlFor="updateID">ID</label>
+                                            <input type="text" readOnly defaultValue={this.state.updateID}/>
+                                        </div>
+                                        <div className={"barra"}>
+                                            <label htmlFor="nombre">Nombre</label>
+                                            <input type="text"
+                                                   className="form-control"
+                                                   name="nombre"
+                                                   id="nombre"
+                                                   placeholder="Ingrese el nombre"
+                                                   aria-describedby="nombreHelp"
+                                                   value={this.state.nombre}
+                                                   onChange={this.changeField.bind(this)}/>
+                                        </div>
+                                        <div className={"barra"}>
+                                            <label htmlFor="idCategoria">Categoria</label>
+                                            <select name="idCategoria" id="idCategoria" value={this.state.idCategoria} onChange={this.changeField.bind(this)}>
+                                                <For each="item" index="idx" of={ this.state.categorias }>
+                                                    <option key={idx} value={item.idCategoria}>{item.name}</option>
+                                                </For>
+                                            </select>
+                                        </div>
+                                        <div className={"barra"}>
+                                            <label htmlFor="precio">Precio</label>
+                                            <input type="text"
+                                                   className="form-control"
+                                                   name="precio"
+                                                   id="precio"
+                                                   placeholder="Ingrese el precio"
+                                                   aria-describedby="apellidoHelp"
+                                                   value={this.state.precio}
+                                                   onChange={this.changeField.bind(this)}/>
+                                        </div>
+                                        <div className={"barra"}>
+                                            <label htmlFor="imagen">Imagen</label>
+                                            <input type="text"
+                                                   className="form-control"
+                                                   name="imagen"
+                                                   id="imagen"
+                                                   placeholder="Ingrese la url de la imagen"
+                                                   aria-describedby="loginHelp"
+                                                   value={this.state.login}
+                                                   onChange={this.changeField.bind(this)}/>
+                                        </div>
+                                        <div className={"barra"}>
+                                            <label htmlFor="descripcion">Descripción</label>
+                                            <input type="text"
+                                                   className="form-control"
+                                                   name="descripcion"
+                                                   id="descripcion"
+                                                   placeholder="Ingrese la descripcion del producto"
+                                                   aria-describedby="loginHelp"
+                                                   value={this.state.descripcion}
+                                                   onChange={this.changeField.bind(this)}/>
+                                        </div>
+                                        <div className={"barra"}>
+                                            <label htmlFor="cantidad">Cantidad</label>
+                                            <input type="text"
+                                                   className="form-control"
+                                                   name="cantidad"
+                                                   id="cantidad"
+                                                   placeholder="Ingrese la cantidad de productos existentes"
+                                                   aria-describedby="loginHelp"
+                                                   value={this.state.cantidad}
+                                                   onChange={this.changeField.bind(this)}/>
+                                        </div>
                                     </div>
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-secondary"
                                                 data-bs-dismiss="modal">Close
                                         </button>
-                                        <button type="button" className="btn btn-primary">Save changes</button>
+                                        <button type="button" className="btn btn-primary" onClick={this.update.bind(this)}>Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -170,69 +243,6 @@ class productAdministration extends Component{
 
                         <div className={"adds"}>
                             <h5>Registrar productos</h5>
-                            <div className={"barra"}>
-                                <label htmlFor="idCategoria">Categoria</label>
-                                <select name="idCategoria" id="idCategoria" value={this.state.idCategoria} onChange={this.changeField.bind(this)}>
-                                    <For each="item" index="idx" of={ this.state.categorias }>
-                                        <option key={idx} value={item.idCategoria}>{item.name}</option>
-                                    </For>
-                                </select>
-                            </div>
-                            <div className={"barra"}>
-                                <label htmlFor="nombre">Nombre</label>
-                                <input type="text"
-                                       className="form-control"
-                                       name="nombre"
-                                       id="nombre"
-                                       placeholder="Ingrese el nombre"
-                                       aria-describedby="nombreHelp"
-                                       value={this.state.nombre}
-                                       onChange={this.changeField.bind(this)}/>
-                            </div>
-                            <div className={"barra"}>
-                                <label htmlFor="precio">Precio</label>
-                                <input type="text"
-                                       className="form-control"
-                                       name="precio"
-                                       id="precio"
-                                       placeholder="Ingrese el precio"
-                                       aria-describedby="apellidoHelp"
-                                       value={this.state.precio}
-                                       onChange={this.changeField.bind(this)}/>
-                            </div>
-                            <div className={"barra"}>
-                                <label htmlFor="imagen">Imagen</label>
-                                <input type="text"
-                                       className="form-control"
-                                       name="imagen"
-                                       id="imagen"
-                                       placeholder="Ingrese la url de la imagen"
-                                       aria-describedby="loginHelp"
-                                       value={this.state.login}
-                                       onChange={this.changeField.bind(this)}/>
-                            </div>
-                            <div className={"barra"}>
-                                <label htmlFor="descripcion">Descripción</label>
-                                <input type="text"
-                                       className="form-control"
-                                       name="descripcion"
-                                       id="descripcion"
-                                       placeholder="Ingrese la descripcion del producto"
-                                       aria-describedby="loginHelp"
-                                       value={this.state.descripcion}
-                                       onChange={this.changeField.bind(this)}/>
-                            </div>
-                            <div className={"barra"}>
-                                <label htmlFor="cantidad">Cantidad</label>
-                                <input type="text"
-                                       className="form-control"
-                                       name="cantidad"
-                                       id="cantidad"
-                                       placeholder="Ingrese la cantidad de productos existentes"
-                                       aria-describedby="loginHelp"
-                                       value={this.state.cantidad}
-                                       onChange={this.changeField.bind(this)}/>
-                            </div>
                             <div>
                                 <input type="Button"
                                        id="reload"

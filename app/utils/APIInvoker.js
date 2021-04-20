@@ -35,7 +35,6 @@ class APIInvoker {
     }
 
     invokePOST(url, body, okCallbak, failCallback){
-        console.log('body ==>',body)
         let params = {
             method: 'POST',
             headers: this.getAPIHeader(),
@@ -61,7 +60,6 @@ class APIInvoker {
                 return response.json()
             })
             .then(data => {
-                console.log("data :" + JSON.stringify(data))
                 if (data.status)
                     okCallback(data)
                 else
