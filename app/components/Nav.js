@@ -46,7 +46,7 @@ class Nav extends React.Component{
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link active bg-danger text-primary" aria-current="page" onClick={this.cerrarSesion.bind(this)}>Cerrar sesión</Link>
+                        <a aria-readonly className="nav-link active bg-danger text-primary" aria-current="page" onClick={this.cerrarSesion.bind(this)}>Cerrar sesión</a>
                     </li>
                 </ul>
             </div>

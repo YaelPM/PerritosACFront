@@ -134,39 +134,39 @@ class productAdministration extends Component{
                         <div className={"list"}>
                             <div className="container border border-3 border-dark rounded-3">
                                     <div className="row border-bottom border-1 border-success">
-                                        <div className="col border border-dark">
+                                        <div className="col border col-2 border-dark">
                                             ID:
                                         </div>
-                                        <div className="col border border-dark">
+                                        <div className="col col-3 border border-dark">
                                             Nombre:
                                         </div>
-                                        <div className="col border border-dark">
+                                        <div className="col col-2 border border-dark">
                                             Precio:
                                         </div>
-                                        <div className="col border border-dark">
+                                        <div className="col col-2 border border-dark">
                                             ID Categoria:
                                         </div>
-                                        <div className="col border border-dark">
+                                        <div className="col border col-3 border-dark">
                                             Acciones:
                                         </div>
                                     </div>
                                     <If condition={this.state.productos!=null}>
                                         <For each="x" index="idx" of={this.state.productos}>
                                             <div key={idx} className="row border-bottom border-1 border-dark">
-                                                <div className="col border border-dark">
+                                                <div className="col col-2 border border-dark">
                                                     {x.idProducto}
                                                 </div>
-                                                <div className="col border border-dark">
+                                                <div className="col col-3 border border-dark">
                                                     {x.nombre}
                                                 </div>
-                                                <div className="col border border-dark">
+                                                <div className="col col-2 border border-dark">
                                                     {x.precio}
                                                 </div>
-                                                <div className="col border border-dark">
+                                                <div className="col border col-2 border-dark">
                                                     {x.idCategoria}
                                                 </div>
 
-                                                <div className="col border border-dark">
+                                                <div className="col border col-3 border-dark">
                                                     <button
                                                         type="button"
                                                         className="btn btn-success"
@@ -212,7 +212,7 @@ class productAdministration extends Component{
                                 <div className="modal-content">
                                     <div className="modal-header">
                                         <h5 className="modal-title">Actualizar {this.state.updateName}</h5>
-                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={this.clear.bind(this)}>
                                         </button>
                                     </div>
                                     <div className="modal-body">
@@ -293,7 +293,7 @@ class productAdministration extends Component{
                                 </div>
                             </div>
                         </div>
-                        <div className="modal" tabIndex="-1" id={"ModalAdd"}>
+                        <div className="modal" on tabIndex="-1" id={"ModalAdd"}>
                             <div className="modal-dialog">
                                 <div className="modal-content">
                                     <div className="modal-header">
@@ -384,27 +384,15 @@ class productAdministration extends Component{
                                         </button>
                                     </div>
                                     <div className="modal-body">
-                                        Por favor confirma la eliminación
+                                        ¿Estás seguro de eliminar este producto?
                                     </div>
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close
+                                                data-bs-dismiss="modal">Mejor no :(
                                         </button>
-                                        <button type="button" className="btn btn-primary" onClick={this.delete.bind(this)}>Save changes</button>
+                                        <button type="button" className="btn btn-primary" onClick={this.delete.bind(this)}>De acuerdo :)</button>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div className={"adds"}>
-                            <h5>Registrar productos</h5>
-                            <div>
-                                <input type="Button"
-                                       id="reload"
-                                       onClick={this.add.bind(this)}
-                                       defaultValue={"Registrar"}
-                                       className={"boton1"}
-                                />
                             </div>
                         </div>
                     </div>

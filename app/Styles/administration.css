@@ -14,10 +14,12 @@
     color: #ffe927;
 }
 .flecha1{
-    position: absolute;
-    margin-top: 67px;
-    margin-left: -45%;
-    width: 99px;
+    /* position: absolute; */
+    margin-top: 0%;
+    margin-left: -25%;
+    margin-bottom: -10%;
+    /* height: 10%; */
+    width: 10%;
 }
 .list, .adds, .delete{
     margin-top: 19%;
