@@ -68,14 +68,11 @@ class Login extends React.Component{
     }
     render() {
         return(
-            <div className={"all"}>
-                <If condition={this.token}>
-                    <h1>Existe token</h1>
-                </If>
+            <div>
                 <p className="textLogin">Login</p>
-                    <Link to={"/register"}>
-                        <input type="Button" className={"buttonRegistrarse"} defaultValue={"Registrarse"}/>
-                    </Link>
+                <Link to={"/register"}>
+                    <input type="Button" className={"buttonRegistrarse"} defaultValue={"Registrarse"}/>
+                </Link>
                <form className="Login" >
 
                    <div className="groupUser">
@@ -111,7 +108,7 @@ class Login extends React.Component{
                    </div>
 
                    <div className="iniciar">
-                            <input type="Button" onClick={this.iniciarSesion.bind(this)} id="button" defaultValue="Iniciar"/>
+                       <input type="Button" onClick={this.iniciarSesion.bind(this)} id="button" defaultValue="Iniciar"/>
                    </div>
                </form>
             </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import "../Styles/nav.css"
 import Cookies from "universal-cookie";
+import {Link} from "react-router-dom";
 const cookies= new Cookies()
 
 class Nav extends React.Component{
@@ -45,7 +46,7 @@ class Nav extends React.Component{
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" onClick={this.cerrarSesion.bind(this)}>Cerrar sesión</a>
+                        <Link className="nav-link active bg-danger text-primary" aria-current="page" onClick={this.cerrarSesion.bind(this)}>Cerrar sesión</Link>
                     </li>
                 </ul>
             </div>

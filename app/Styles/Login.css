@@ -2,9 +2,8 @@
     justify-content: center;
 }
 .Login{
-
-    width: 545px;
-    height: 550px;
+    width: 70%;
+    height: 90%;
     left: 447px;
     top: 198px;
     margin-left: auto;
@@ -15,37 +14,26 @@
     border-radius: 25px;
 }
 .textLogin{
-    /*position: absolute;
-    width: 234px;
-    height: 114px;
-    left: 603px;
-    top: 51px; */
     text-align: center;
-
     font-family: Righteous;
-    font-style: normal;
+    margin-bottom: -5%;
     font-weight: normal;
-    font-size: 92px;
-    line-height: 114px;
-
+    font-size: 330%;
+    /* line-height: 114px; */
     color: #000000;
 }
 .buttonRegistrarse{
-    position: absolute;
-    width: 19%;
-    height: 46px;
-    /* left: 1110px; */
-    right: 8%;
-    top: 50px;
-    font-family: Revalia;
-    font-style: normal;
+    width: 20%;
+    height: 5%;
+    margin-left: 65%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    font-family: emoji;
+    font-style: italic;
     font-weight: normal;
-    font-size: 21px;
+    font-size: 75%;
     line-height: 26px;
-    /* identical to box height */
-
     color: #FFFFFF;
-
     background: #072868;
 }
 .labelUser{
@@ -66,42 +54,38 @@
     color: #000000;
 }
 #button{
-    width: 272px;
+    width: 40%;
     height: 46px;
     left: 584px;
     top: 709px;
-
-    margin-top: 132px;
-    margin-left: 129px;
-    margin-right: 137px;
-
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
     font-family: Revalia;
     font-style: normal;
     font-weight: normal;
     font-size: 21px;
     line-height: 26px;
-    /* identical to box height */
-
     color: #FFFFFF;
-
     background: #000000;
 }
 .groupUser{
-    width: 419px;
-    height: 84px;
+    width: 80%;
+    height: 5%;
     left: 510px;
     top: 332px;
-    margin-top: 56px;
+    margin-top: 12%;
     margin-left: auto;
     margin-right: auto;
 
 }
 .groupPassword{
-    width: 419px;
-    height: 85px;
+    width: 80%;
+    height: 5%;
     left: 510px;
-    top: 492px;
-    margin-top: 45px;
+    top: 332px;
+    margin-top: 12%;
     margin-left: auto;
     margin-right: auto;
 }

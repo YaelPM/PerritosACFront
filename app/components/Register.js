@@ -88,7 +88,7 @@ class Register extends React.Component{
                 <Link to={"/login"}>
                     <img src="app/assets/images/flechaAtras.png" className={"flecha"} alt=""/>
                 </Link>
-                <h1 className={"title"}>Register</h1>
+                <p className={"title"}>Register</p>
                 <div className={"cont"}>
                     <div className={"idRol"}>
                         <label htmlFor="idRol">idRol</label>
