@@ -24,7 +24,7 @@ class Product extends React.Component{
                                 <a onClick={this.change.bind(this)} className="btn btn-primary">Ver Producto</a>
                             </When>
                             <When condition={!this.state.descripcion}>
-                                <img src={this.props.imagen} alt=""/>
+                                <img className={"img-thumbnail"} src={this.props.imagen} alt=""/>
                                 <h5 className="card-title">{this.props.nombre}</h5>
                                 <p className="card-text">${this.props.precio}     Cantidad: {this.props.cantidad}</p>
                                 <a onClick={this.change.bind(this)} className="btn btn-primary">Ver descripcion</a>

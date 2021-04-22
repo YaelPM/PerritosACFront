@@ -1,12 +1,14 @@
 .card{
-    width: 25rem;
+    width: 70%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 5%;
+    margin-top: 0%;
+    margin-bottom: 0%;
     background-color: #081d62;
     border-radius: 8%;
+    border-color: #ffe927;
     text-align-last: center;
-    color: #96e7ea;
+    color: #e9fd31;
     transition: 0.5s;
 }
 .card:hover{
@@ -17,6 +19,14 @@ img{
     margin-left: 35%;
     margin-right: 35%;
     width: 31%;
+}
+.fondoConsolas{
+    background-image: url("../assets/images/fondoConsolas.jpg");
+    background-size: auto;
+}
+.fondoJuegos{
+    background-image: url("../assets/images/fondoJuegos.jpg");
+    background-size: auto;
 }
 .boxlarge{
     background-color: bisque;

@@ -19,7 +19,7 @@ class Nav extends React.Component{
     render() {
         return(
             <div>
-                <ul className="nav nav-justified nav-tabs">
+                <ul className="nav d-flex flex-row bg-light nav-tabs">
                     <li className="nav-item">
                         <a className="nav-link active" aria-current="page" href="/home">Home</a>
                     </li>

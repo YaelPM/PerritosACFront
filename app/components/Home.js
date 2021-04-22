@@ -27,7 +27,6 @@ class Home extends React.Component{
         }
     }
     render() {
-        console.log(cookies.get("login"))
         return(
             <div className={"home"}>
                 <Nav></Nav>

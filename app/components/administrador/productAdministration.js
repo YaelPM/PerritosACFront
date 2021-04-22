@@ -28,7 +28,6 @@ class productAdministration extends Component{
         this.productos=[]
         this.token= false
 
-
         APIInvoker.invokeGET('/users/verifyToken',data => {
             if(data.status){
                 this.token= true
@@ -132,7 +131,7 @@ class productAdministration extends Component{
                             <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalAdd">Añadir producto</button>
                         </div>
                         <div className={"list"}>
-                            <div className="container border border-3 border-dark rounded-3">
+                            <div className="container text-center bg-light border border-3 border-dark rounded-3">
                                     <div className="row border-bottom border-1 border-success">
                                         <div className="col border col-2 border-dark">
                                             ID:
@@ -307,7 +306,7 @@ class productAdministration extends Component{
                                             <input type="text"
                                                    className="form-control"
                                                    name="nombre"
-                                                   id="nombre"
+                                                   id="nombre1"
                                                    placeholder="Ingrese el nombre"
                                                    aria-describedby="nombreHelp"
                                                    value={this.state.nombre}
@@ -326,7 +325,7 @@ class productAdministration extends Component{
                                             <input type="text"
                                                    className="form-control"
                                                    name="precio"
-                                                   id="precio"
+                                                   id="precio1"
                                                    placeholder="Ingrese el precio"
                                                    aria-describedby="apellidoHelp"
                                                    value={this.state.precio}
@@ -337,7 +336,7 @@ class productAdministration extends Component{
                                             <input type="text"
                                                    className="form-control"
                                                    name="imagen"
-                                                   id="imagen"
+                                                   id="imagen1"
                                                    placeholder="Ingrese la url de la imagen"
                                                    aria-describedby="loginHelp"
                                                    value={this.state.imagen}
@@ -348,7 +347,7 @@ class productAdministration extends Component{
                                             <input type="text"
                                                    className="form-control"
                                                    name="descripcion"
-                                                   id="descripcion"
+                                                   id="descripcion1"
                                                    placeholder="Ingrese la descripcion del producto"
                                                    aria-describedby="loginHelp"
                                                    value={this.state.descripcion}
@@ -359,7 +358,7 @@ class productAdministration extends Component{
                                             <input type="text"
                                                    className="form-control"
                                                    name="cantidad"
-                                                   id="cantidad"
+                                                   id="cantidad1"
                                                    placeholder="Ingrese la cantidad de productos existentes"
                                                    aria-describedby="loginHelp"
                                                    value={this.state.cantidad}

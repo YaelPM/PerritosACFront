@@ -4,6 +4,9 @@ img{
     width: 31%;
     height: 19%;
 }
+.fondoConsolas{
+    background-image: url("../assets/images/fondoConsolas.jpg");
+}
 h2{
     margin-left: 39%;
     margin-right: 35%;
