@@ -11,6 +11,12 @@
     color: #e9fd31;
     transition: 0.5s;
 }
+.descripcion{
+    margin-top: 0%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 0%;
+}
 .card:hover{
     background-color: black;
     color: #FFFFFF;

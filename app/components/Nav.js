@@ -1,7 +1,5 @@
 import React from 'react'
-import "../Styles/nav.css"
 import Cookies from "universal-cookie";
-import {Link} from "react-router-dom";
 const cookies= new Cookies()
 
 class Nav extends React.Component{
@@ -19,7 +17,7 @@ class Nav extends React.Component{
     render() {
         return(
             <div>
-                <ul className="nav d-flex flex-row bg-light nav-tabs">
+                <ul className="nav d-flex flex-row bg-secondary nav-tabs">
                     <li className="nav-item">
                         <a className="nav-link active" aria-current="page" href="/home">Home</a>
                     </li>
