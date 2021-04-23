@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import APIInvoker from "../../utils/APIInvoker";
 import update from "immutability-helper";
 import "../../Styles/administration.css"
+import swal from 'sweetalert';
 
 class productAdministration extends Component{
 
@@ -75,6 +76,12 @@ class productAdministration extends Component{
             cantidad: this.state.cantidad
         }
         APIInvoker.invokePOST('/products/addProduct',product, data => {
+            swal({
+                title: "Realizado!!",
+                text: "CLick en el botón!",
+                icon: "success",
+                button: "Hecho!",
+            });
         }, error => {
             alert(JSON.stringify(error))
         })
@@ -93,6 +100,12 @@ class productAdministration extends Component{
             cantidad: this.state.cantidad
         }
         APIInvoker.invokePUT('/products/updateProduct',product, data => {
+            swal({
+                title: "Producto Actualizado!",
+                text: product.nombre + " ha sido actualizado correctamente",
+                icon: "success",
+                button: "Ok",
+            });
         }, error => {
             alert(JSON.stringify(error))
         })
@@ -112,7 +125,13 @@ class productAdministration extends Component{
         )
     }
     delete(){
-        APIInvoker.invokeDELETE(`/products/deleteProduct/${this.state.idDelete}`,data => {alert(JSON.stringify(data.message))
+        APIInvoker.invokeDELETE(`/products/deleteProduct/${this.state.idDelete}`,data => {
+            swal({
+                title: "Producto Eliminado!",
+                text: "El producto se ha eliminado",
+                icon: "warning",
+                button: "Ok",
+            });
         }, error => {
             alert(JSON.stringify(error))
         })
@@ -300,7 +319,7 @@ class productAdministration extends Component{
                                         <button type="button" className="btn btn-secondary"
                                                 data-bs-dismiss="modal" onClick={this.clear.bind(this)}>Close
                                         </button>
-                                        <button type="button" className="btn btn-primary" onClick={this.update.bind(this)}>Save changes</button>
+                                        <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={this.update.bind(this)}>Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -382,7 +401,7 @@ class productAdministration extends Component{
                                         <button type="button" className="btn btn-secondary"
                                                 data-bs-dismiss="modal" onClick={this.clear.bind(this)}>Close
                                         </button>
-                                        <button type="button" className="btn btn-primary" onClick={this.add.bind(this)}>Save changes</button>
+                                        <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={this.add.bind(this)}>Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -402,7 +421,7 @@ class productAdministration extends Component{
                                         <button type="button" className="btn btn-secondary"
                                                 data-bs-dismiss="modal">Mejor no :(
                                         </button>
-                                        <button type="button" className="btn btn-primary" onClick={this.delete.bind(this)}>De acuerdo :)</button>
+                                        <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={this.delete.bind(this)}>De acuerdo :)</button>
                                     </div>
                                 </div>
                             </div>
