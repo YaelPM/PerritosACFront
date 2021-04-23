@@ -5,6 +5,21 @@
     border-width: 2px;
     border-color: black;
 }
+.col{
+    background-color: #136E98;
+    transition: 600ms;
+    color: white;
+}
+.col:hover{
+    background-color: white;
+    color: black;
+}
+
+.btn{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    transition: 600ms;
+}
 .noToken{
     text-align: center;
     color: crimson;
@@ -21,8 +36,8 @@
     /* height: 10%; */
     width: 5%;
 }
-.list, .adds, .delete{
-    margin-top: 19%;
+.list{
+    margin-top: 5%;
 }
 .admn{
     font-family: sans-serif;

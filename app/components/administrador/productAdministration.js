@@ -131,8 +131,8 @@ class productAdministration extends Component{
                             <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalAdd">Añadir producto</button>
                         </div>
                         <div className={"list"}>
-                            <div className="container text-center bg-light border border-3 border-dark rounded-3">
-                                    <div className="row border-bottom border-1 border-success">
+                            <div className="container rounded-2 text-center fs-6 bg-white border border-3 border-dark rounded-3">
+                                    <div className="row border-bottom fs-5 border-1 border-success">
                                         <div className="col border col-2 border-dark">
                                             ID:
                                         </div>
@@ -143,7 +143,7 @@ class productAdministration extends Component{
                                             Precio:
                                         </div>
                                         <div className="col col-2 border border-dark">
-                                            ID Categoria:
+                                            Categoria:
                                         </div>
                                         <div className="col border col-3 border-dark">
                                             Acciones:
@@ -162,7 +162,20 @@ class productAdministration extends Component{
                                                     {x.precio}
                                                 </div>
                                                 <div className="col border col-2 border-dark">
-                                                    {x.idCategoria}
+                                                    <Choose>
+                                                        <When condition={x.idCategoria==1}>
+                                                            Consola
+                                                        </When>
+                                                        <When condition={x.idCategoria==2}>
+                                                            Mando
+                                                        </When>
+                                                        <When condition={x.idCategoria==3}>
+                                                            Accesorios
+                                                        </When>
+                                                        <When condition={x.idCategoria==4}>
+                                                            Juegos
+                                                        </When>
+                                                    </Choose>
                                                 </div>
 
                                                 <div className="col border col-3 border-dark">
