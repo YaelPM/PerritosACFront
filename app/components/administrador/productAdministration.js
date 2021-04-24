@@ -176,6 +176,7 @@ class productAdministration extends Component{
                                                 </div>
                                                 <div className="col col-3 border border-dark">
                                                     {x.nombre}
+                                                    <img src={x.imagen} alt=""/>
                                                 </div>
                                                 <div className="col col-2 border border-dark">
                                                     {x.precio}
