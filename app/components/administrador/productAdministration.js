@@ -70,10 +70,7 @@ class productAdministration extends Component{
         let product = {
             idCategoria: this.state.idCategoria,
             nombre: this.state.nombre,
-            precio: this.state.precio,
             imagen: this.state.imagen,
-            descripcion: this.state.descripcion,
-            cantidad: this.state.cantidad
         }
         APIInvoker.invokePOST('/products/addProduct',product, data => {
             swal({
@@ -94,14 +91,11 @@ class productAdministration extends Component{
             idProducto: this.state.updateID,
             idCategoria: this.state.idCategoria,
             nombre: this.state.nombre,
-            precio: this.state.precio,
-            imagen: this.state.imagen,
-            descripcion: this.state.descripcion,
-            cantidad: this.state.cantidad
+            imagen: this.state.imagen
         }
         APIInvoker.invokePUT('/products/updateProduct',product, data => {
             swal({
-                title: "Producto Actualizado!",
+                title: "Mascota Actualizada!",
                 text: product.nombre + " ha sido actualizado correctamente",
                 icon: "success",
                 button: "Ok",
@@ -117,9 +111,6 @@ class productAdministration extends Component{
         this.setState(
             {
                 nombre:"",
-                descripcion:"",
-                precio:"",
-                cantidad: "",
                 imagen:""
             }
         )
@@ -158,10 +149,7 @@ class productAdministration extends Component{
                                         <div className="col col-3 border border-dark">
                                             Nombre:
                                         </div>
-                                        <div className="col col-2 border border-dark">
-                                            Precio:
-                                        </div>
-                                        <div className="col col-2 border border-dark">
+                                        <div className="col col-4 border border-dark">
                                             Categoria:
                                         </div>
                                         <div className="col border col-3 border-dark">
@@ -178,22 +166,13 @@ class productAdministration extends Component{
                                                     {x.nombre}
                                                     <img src={x.imagen} alt=""/>
                                                 </div>
-                                                <div className="col col-2 border border-dark">
-                                                    {x.precio}
-                                                </div>
-                                                <div className="col border col-2 border-dark">
+                                                <div className="col border col-4 border-dark">
                                                     <Choose>
                                                         <When condition={x.idCategoria==1}>
-                                                            Consola
+                                                            perro
                                                         </When>
                                                         <When condition={x.idCategoria==2}>
-                                                            Mando
-                                                        </When>
-                                                        <When condition={x.idCategoria==3}>
-                                                            Accesorios
-                                                        </When>
-                                                        <When condition={x.idCategoria==4}>
-                                                            Juegos
+                                                            Gato
                                                         </When>
                                                     </Choose>
                                                 </div>
@@ -211,10 +190,7 @@ class productAdministration extends Component{
                                                                     updateName: x.nombre,
                                                                     idCategoria:x.idCategoria,
                                                                     nombre:x.nombre,
-                                                                    descripcion: x.descripcion,
-                                                                    imagen: x.imagen,
-                                                                    cantidad:x.cantidad,
-                                                                    precio: x.precio
+                                                                    imagen: x.imagen
                                                                     }
                                                                 )
                                                             }}>
@@ -272,17 +248,6 @@ class productAdministration extends Component{
                                             </select>
                                         </div>
                                         <div className={"barra"}>
-                                            <label htmlFor="precio">Precio</label>
-                                            <input type="text"
-                                                   className="form-control"
-                                                   name="precio"
-                                                   id="precio"
-                                                   placeholder="Ingrese el precio"
-                                                   aria-describedby="apellidoHelp"
-                                                   value={this.state.precio}
-                                                   onChange={this.changeField.bind(this)}/>
-                                        </div>
-                                        <div className={"barra"}>
                                             <label htmlFor="imagen">Imagen</label>
                                             <input type="text"
                                                    className="form-control"
@@ -291,28 +256,6 @@ class productAdministration extends Component{
                                                    placeholder="Ingrese la url de la imagen"
                                                    aria-describedby="loginHelp"
                                                    value={this.state.imagen}
-                                                   onChange={this.changeField.bind(this)}/>
-                                        </div>
-                                        <div className={"barra"}>
-                                            <label htmlFor="descripcion">Descripción</label>
-                                            <input type="text"
-                                                   className="form-control"
-                                                   name="descripcion"
-                                                   id="descripcion"
-                                                   placeholder="Ingrese la descripcion del producto"
-                                                   aria-describedby="loginHelp"
-                                                   value={this.state.descripcion}
-                                                   onChange={this.changeField.bind(this)}/>
-                                        </div>
-                                        <div className={"barra"}>
-                                            <label htmlFor="cantidad">Cantidad</label>
-                                            <input type="text"
-                                                   className="form-control"
-                                                   name="cantidad"
-                                                   id="cantidad"
-                                                   placeholder="Ingrese la cantidad de productos existentes"
-                                                   aria-describedby="loginHelp"
-                                                   value={this.state.cantidad}
                                                    onChange={this.changeField.bind(this)}/>
                                         </div>
                                     </div>
@@ -354,17 +297,6 @@ class productAdministration extends Component{
                                             </select>
                                         </div>
                                         <div className={"barra"}>
-                                            <label htmlFor="precio">Precio</label>
-                                            <input type="text"
-                                                   className="form-control"
-                                                   name="precio"
-                                                   id="precio1"
-                                                   placeholder="Ingrese el precio"
-                                                   aria-describedby="apellidoHelp"
-                                                   value={this.state.precio}
-                                                   onChange={this.changeField.bind(this)}/>
-                                        </div>
-                                        <div className={"barra"}>
                                             <label htmlFor="imagen">Imagen</label>
                                             <input type="text"
                                                    className="form-control"
@@ -373,28 +305,6 @@ class productAdministration extends Component{
                                                    placeholder="Ingrese la url de la imagen"
                                                    aria-describedby="loginHelp"
                                                    value={this.state.imagen}
-                                                   onChange={this.changeField.bind(this)}/>
-                                        </div>
-                                        <div className={"barra"}>
-                                            <label htmlFor="descripcion">Descripción</label>
-                                            <input type="text"
-                                                   className="form-control"
-                                                   name="descripcion"
-                                                   id="descripcion1"
-                                                   placeholder="Ingrese la descripcion del producto"
-                                                   aria-describedby="loginHelp"
-                                                   value={this.state.descripcion}
-                                                   onChange={this.changeField.bind(this)}/>
-                                        </div>
-                                        <div className={"barra"}>
-                                            <label htmlFor="cantidad">Cantidad</label>
-                                            <input type="text"
-                                                   className="form-control"
-                                                   name="cantidad"
-                                                   id="cantidad1"
-                                                   placeholder="Ingrese la cantidad de productos existentes"
-                                                   aria-describedby="loginHelp"
-                                                   value={this.state.cantidad}
                                                    onChange={this.changeField.bind(this)}/>
                                         </div>
                                     </div>

@@ -22,16 +22,10 @@ class Nav extends React.Component{
                         <a className="nav-link active" aria-current="page" href="/home">Home</a>
                     </li>
                     <li className="navs nav-item">
-                        <a className="nav-link active" aria-current="page" href="/consolas">Consolas</a>
+                        <a className="nav-link active" aria-current="page" href="/gatos">Gatos</a>
                     </li>
                     <li className="navs nav-item">
-                        <a className="nav-link active" href="/juegos">Juegos</a>
-                    </li>
-                    <li className="navs nav-item">
-                        <a className="nav-link active" href="/mandos">Mandos</a>
-                    </li>
-                    <li className="navs nav-item">
-                        <a className="nav-link active" href="/accesorios">Accesorios</a>
+                        <a className="nav-link active" href="/perros">Perros</a>
                     </li>
                     <li className="navs nav-item dropdown bg-light">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -39,8 +33,8 @@ class Nav extends React.Component{
                             Administración
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="/productAdministration">Productos</a></li>
-                            <li><a className="dropdown-item" href="/register">Usuarioss</a></li>
+                            <li><a className="dropdown-item" href="/productAdministration">Mascotas</a></li>
+                            <li><a className="dropdown-item" href="/register">Usuarios</a></li>
                         </ul>
                     </li>
                     <li className="navs nav-pills nav-fill">

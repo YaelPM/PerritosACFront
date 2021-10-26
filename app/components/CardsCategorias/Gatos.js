@@ -2,23 +2,23 @@ import React from 'react'
 import "../../Styles/card.css"
 import Nav from "../Nav"
 import APIInvoker from "../../utils/APIInvoker";
-import Product from "../Product"
+import Mascota from "../Mascota"
 
-class Juegos extends React.Component{
+class Gatos extends React.Component{
 
     constructor() {
         super();
         this.state = {
             categoria:'',
             imagen:'',
-            juegos: []
+            gatos: []
         }
-        this.consolas= []
-        APIInvoker.invokeGET(`/products/getProductCategory/${4}`,data => {
+        this.mandos= []
+        APIInvoker.invokeGET(`/products/getProductCategory/${2}`,data => {
             this.setState({
-                juegos : data.datos
+                gatos : data.datos
             })
-            console.log(this.state.juegos)
+            console.log(this.state.gatos)
         }, error => {
         })
     }
@@ -31,21 +31,21 @@ class Juegos extends React.Component{
                 </div>
                 <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner">
-                        <For each="x" index="idx" of={this.state.juegos}>
+                        <For each="x" index="idx" of={this.state.gatos}>
                             <Choose>
                                 <When condition={idx==0}>
                                     <div className="carousel-item active">
-                                        <Product key={idx} nombre={x.nombre} precio={x.precio} imagen={x.imagen} cantidad={x.cantidad} descripcion={x.descripcion}></Product>
+                                        <Mascota key={idx} nombre={x.nombre} imagen={x.imagen}></Mascota>
                                     </div>
                                 </When>
                                 <When condition={idx>0}>
                                     <div className="carousel-item">
-                                        <Product key={idx} nombre={x.nombre} precio={x.precio} imagen={x.imagen} cantidad={x.cantidad} descripcion={x.descripcion}></Product>
+                                    <Mascota key={idx} nombre={x.nombre} imagen={x.imagen}></Mascota>
                                     </div>
                                 </When>
                             </Choose>
                             <div className="carousel-item">
-                                <Product key={idx} nombre={x.nombre} precio={x.precio} imagen={x.imagen} cantidad={x.cantidad} descripcion={x.descripcion}></Product>
+                            <Mascota key={idx} nombre={x.nombre} imagen={x.imagen}></Mascota>
                             </div>
 
                         </For>
@@ -61,11 +61,11 @@ class Juegos extends React.Component{
                 </div>
                 <div className={"foother bg-secondary"}>
                     <p className={"fs-4 text-center d-flex"}>
-                        Un videojuego es un juego electrónico en el que una o más personas interactúan por medio de un controlador, con un dispositivo que muestra imágenes de vídeo.1​ Este dispositivo electrónico, conocido genéricamente como «plataforma», puede ser una computadora, una máquina de arcade, una videoconsola o un dispositivo portátil, como por ejemplo un teléfono móvil, teléfono inteligente o tableta. La industria de los videojuegos es una de las principales en el mundo del arte y del entretenimiento.
+                       Lista de gatos.
                     </p>
                 </div>
             </div>
         )
     }
 }
-export default Juegos;
+export default Gatos;

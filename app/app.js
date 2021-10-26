@@ -9,12 +9,10 @@ import Register from "./components/Register";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import addRoles from "../ControlRoles/addRoles";
-import Mandos from "./components/CardsCategorias/Mandos";
-import Consolas from "./components/CardsCategorias/Consolas";
-import Product from "./components/Product";
+import Perros from "./components/CardsCategorias/Perros";
+import Gatos from "./components/CardsCategorias/Gatos";
+import Mascota from "./components/Mascota";
 import productAdministration from "./components/administrador/productAdministration";
-import Accesorios from "./components/CardsCategorias/Accesorios";
-import Juegos from "./components/CardsCategorias/Juegos";
 
 class App extends React.Component{
     render() {
@@ -26,12 +24,10 @@ class App extends React.Component{
                     <Route exact path='/login' component={Login}/>
                     <Route exact path='/register' component={Register}/>
                     <Route exact path={"/home"} component={Home}/>
-                    <Route exact path={"/accesorios"} component={Accesorios}/>
-                    <Route exact path={"/juegos"} component={Juegos}/>
-                    <Route exact path={"/consolas"} component={Consolas}/>
-                    <Route exact path={"/mandos"} component={Mandos}/>
+                    <Route exact path={"/perros"} component={Perros}/>
+                    <Route exact path={"/gatos"} component={Gatos}/>
                     <Route exact path={"/addRoles"} component={addRoles}/>
-                    <Route exact path={"/product"} component={Product}/>
+                    <Route exact path={"/mascota"} component={Mascota}/>
                     <Route exact path={"/productAdministration"} component={productAdministration}/>
                     <Route component={NotFound}/>
                 </Switch>

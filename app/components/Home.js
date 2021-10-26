@@ -30,7 +30,7 @@ class Home extends React.Component{
         return(
             <div className={"home"}>
                 <Nav></Nav>
-                <img  className={"imagenLogo"} src="app/assets/images/logo3.png"/>
+                <img  className={"imagenLogo"} src="app/assets/images/logo5.png"/>
             </div>
         )
     }
